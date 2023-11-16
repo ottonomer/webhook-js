@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webhook Receiver</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('webhookData', function(data) {
+      document.getElementById("webhookData").innerText = JSON.stringify(data, null, 2);
+    });
+  </script>
+</head>
+<body>
+  <h1>Webhook Data</h1>
+  <pre id="webhookData"></pre>
+</body>
+</html>
